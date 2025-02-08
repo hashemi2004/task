@@ -12,7 +12,7 @@
     </h1>
     <button
       @click="gotoaddreses"
-      class="py-2 px-5 border-2 rounded-md w-full border-Primary font-bold text-Primary"
+      class="py-2 px-24 md:px-32 border-2 border-Primary rounded-mdborder-Primary font-bold text-Primary"
     >
       مشاهده اطلاعات
     </button>

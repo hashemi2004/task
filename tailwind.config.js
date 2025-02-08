@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        vazirmatn: ['Vazirmatn', 'sans-serif'],
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',

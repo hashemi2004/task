@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <button @click="fetchData" class="p-6 font-bold text-xl">
+  <div>
+    <button @click="fetchData" class="p-4 mt-10 text-gray-600 text-xl">
       آدرس ها و مشخصات
     </button>
 
@@ -36,8 +36,8 @@ export default {
   },
   methods: {
     async fetchData() {
-      const url = 'https://stage.achareh.ir/api/karfarmas/address';
-      const authCode = 'Basic MDk4MjIyMjIyMjI6U2FuYTEyMzQ1Njc4';
+      const url = process.env.VUE_APP_API_URL;
+      const authCode = process.env.VUE_APP_AUTH_CODE;
 
       this.loading = true;
       this.error = null;

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-gray-100">
+  <div id="app" class="bg-gray-100 font-vazirmatn">
     <div class="mb-16">
       <HeaderPart @navigate="handleNavigation"></HeaderPart>
     </div>
@@ -8,12 +8,13 @@
       <RegisterForm
         v-show="currentView === 'RegisterForm'"
         @ValidateFormData="addData"
-      ></RegisterForm>
-      <MyMap
-        v-show="currentView === 'MyMap'"
+      >
+      </RegisterForm>
+      <MapPage
+        v-show="currentView === 'MapPage'"
         :formData="valFormData"
         @navigate="handleNavigation"
-      ></MyMap>
+      ></MapPage>
       <UsersLists
         v-show="currentView === 'UsersLists'"
         :formData="valFormData"
@@ -28,7 +29,7 @@
 
 <script>
 import HeaderPart from './components/HeaderPart.vue';
-import MyMap from './register/MyMap.vue';
+import MapPage from './register/MapPage.vue';
 import UsersLists from './lists/UsersLists.vue';
 import RegisterForm from './register/RegisterForm.vue';
 import RegisterIsDone from './register/RegisterIsDone.vue';
@@ -43,7 +44,7 @@ export default {
   },
   components: {
     RegisterForm,
-    MyMap,
+    MapPage,
     UsersLists,
     HeaderPart,
     RegisterIsDone,
@@ -51,7 +52,7 @@ export default {
   methods: {
     addData(formData) {
       this.valFormData.push(formData);
-      this.currentView = 'MyMap';
+      this.currentView = 'MapPage';
     },
     handleNavigation(view) {
       if (view === 'ShowLists' && this.valFormData.length === 0) {
